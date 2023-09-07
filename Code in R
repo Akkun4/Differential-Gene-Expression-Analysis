@@ -1,0 +1,38 @@
+#add libraries
+library(limma)
+library(affy)
+
+# reads the set of CEL files
+Data <- ReadAffy()
+# RMA normalization on our expression data across all samples
+eset <- rma(Data)
+
+# data frame which shows the sample’s name and number in eset
+pData(eset)
+
+# produce a design matrix (also known as model matrices) for a variety of linear models from limma package  - non-tumor (normal) and tumor.
+# for GSE29431
+# strain <- rep(c("non-tumor","tumor"),times=c(12,54))
+
+# for GSE61304
+# strain <- rep(c("tumor","non-tumor","tumor","non-tumor","tumor","non-tumor","tumor","non-tumor"),times=c(2,1,28,1,15,1,13,1))
+
+# for GSE86374
+strain <- rep(c("tumor","non-tumor"),times=c(124,35))
+
+# design matrix of the microarray experiment
+design <- model.matrix(~factor(strain))
+colnames(design) <- c("non-tumor","tumor")
+
+# lmFit is a function from the limma package
+# It has two main arguments: the expression data and the design matrix. 
+# lmFit fits linear model for each gene given a series of arrays.
+fit <- lmFit(eset, design)
+fit <- eBayes(fit)
+
+options(digits=2)
+
+res<-topTable(fit, number=Inf, adjust.method="none", coef=1)
+
+# save your results
+write.table(res,"../../Limma_outputs/GSE86374_limmaOutput.csv",sep="\t")
