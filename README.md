@@ -1,4 +1,13 @@
-# Differential-Gene-Expression-Analysis
+# METHODS :
+
+· Weighted gene co-expression network analysis (WGCNA) was used to screen modules associated with GCB subtype. Functional analysis was performed by gene ontology (GO) and Kyoto Encyclopedia of Genes and Genomes (KEGG) enrichment.
+
+· Gene expression microarray data of DLBCL (GSE117556) including 255 ABC, 543 GCB and 130 UNC were obtained from Gene Expression Omnibus (GEO) (https://www.ncbi.nlm.nih.gov/geo/) database.
+
+· The “WGCNA” package of R was applied for gene co-expression network construction. The soft threshold power was calculated based on pickSoftThreshold function. FlasClust was used to cluster genes and converted into an adjacency matrix, and then the topological overlap matrix (TOM) was transformed. Genes were clustered into different modules through the dynamic tree cut method with minimal size at 30. Modules with height value less than 0.2 were merged into the same module. Then, module eigengene (ME) was calculated. Pearson correlation analysis was used to assess the correlation between the MEs and DLBCL subtypes.
+
+
+
 
 # Data
 
