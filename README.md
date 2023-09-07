@@ -121,7 +121,7 @@ Limma Output:
 
 # Breast cancer results
 
-![volcanoPlot.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/80202405-892f-462b-8fd9-051c53a517fd/volcanoPlot.png)
+![image (13)](https://github.com/Akkun4/Differential-Gene-Expression-Analysis/assets/113637955/f7ea8660-812a-45c1-a620-fb1927c884a0)
 
 Up → log2FC > 0.5  AND adj.P.Val <0.05
 
@@ -136,4 +136,21 @@ BRD4 interacted genes
 - Up regulated - `CDK8`
 - Down regulated - `RFC2`
 
-[Limma output for Breast cancer data](https://www.notion.so/Limma-output-for-Breast-cancer-data-050dabf6d3134481930a46e6bcb553cb?pvs=21)
+Ovarian cancer  results
+
+![image (14)](https://github.com/Akkun4/Differential-Gene-Expression-Analysis/assets/113637955/c0f8b4c9-fc25-42b0-bc15-b171f2451ec1)
+
+Up → log2FC > 0.5  AND adj.P.Val <0.05
+
+count = 449
+
+Down → log2FC < -0.5  AND adj.P.Val <0.05
+
+count = 82
+
+BRD4 interacted genes 
+
+- Up regulated - `{'KDM6B', 'RBM8A', 'RFC2', 'SRCAP'}`
+- Down regulated - `{'YY1'}`
+
+
